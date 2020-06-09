@@ -3,7 +3,7 @@ import { Component, Vue, Inject } from 'vue-property-decorator';
 import { numeric, required, minLength, maxLength, minValue, maxValue } from 'vuelidate/lib/validators';
 
 import GoodsService from '../goods/goods.service';
-import { IGoods } from '@/shared/model/goods.model';
+import { Goods, IGoods } from '@/shared/model/goods.model';
 
 import OrdersService from '../orders/orders.service';
 import { IOrders } from '@/shared/model/orders.model';
@@ -32,9 +32,9 @@ export default class OrderPointUpdate extends Vue {
 
   @Inject('ordersService') private ordersService: () => OrdersService;
 
-  public orders: IOrders[] = [];
   public isSaving = false;
   public currentLanguage = '';
+  public orderPoints: OrderPoint[] = [];
 
   beforeRouteEnter(to, from, next) {
     next(vm => {
@@ -96,13 +96,26 @@ export default class OrderPointUpdate extends Vue {
   public initRelationships(): void {
     this.goodsService()
       .retrieve()
-      .then(res => {
-        this.goods = res.data;
-      });
-    this.ordersService()
-      .retrieve()
-      .then(res => {
-        this.orders = res.data;
+      .then(gds => {
+        if (this.$route.params.ordersId) {
+          this.orderPointService()
+            .retrieveByOrder(Number(this.$route.params.ordersId))
+            .then(res => {
+              let array: IGoods[] = [];
+              gds.data.forEach(function (el, ind, good) {
+                let yes: boolean = true;
+                res.data.forEach(function (elem, index, orders) {
+                  if (elem.goods.id === el.id) {
+                    yes = false;
+                  }
+                });
+                if (yes) {
+                  array.push(el);
+                }
+              });
+              this.goods = array;
+            });
+        }
       });
   }
 

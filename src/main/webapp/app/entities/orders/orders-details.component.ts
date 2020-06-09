@@ -48,9 +48,8 @@ export default class OrdersDetails extends mixins(AlertMixin) {
 
   public retrieveAllOrderPoints(): void {
     this.isFetching = true;
-
     this.orderPointService()
-      .retrieve()
+      .retrieveByOrder(Number(this.$route.params.ordersId))
       .then(
         res => {
           this.orderPoints = res.data;

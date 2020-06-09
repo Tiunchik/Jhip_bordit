@@ -3,18 +3,18 @@
         <b-navbar-brand class="logo" b-link to="/">
             <span class="logo-img"></span>
             <span class="navbar-title">Bordit</span> <span class="navbar-version">{{version}}</span>
-        </b-navbar-brand>      
-        <b-navbar-toggle 
-        right 
-        class="jh-navbar-toggler d-lg-none" 
-        href="javascript:void(0);"  
-        data-toggle="collapse" 
-        target="header-tabs" 
-        aria-expanded="false" 
+        </b-navbar-brand>
+        <b-navbar-toggle
+        right
+        class="jh-navbar-toggler d-lg-none"
+        href="javascript:void(0);"
+        data-toggle="collapse"
+        target="header-tabs"
+        aria-expanded="false"
         aria-label="Toggle navigation">
             <font-awesome-icon icon="bars" />
         </b-navbar-toggle>
-           
+
         <b-collapse is-nav id="header-tabs">
             <b-navbar-nav class="ml-auto">
                 <b-nav-item to="/" exact>
@@ -34,11 +34,11 @@
                     </span>
                     <b-dropdown-item to="/client">
                         <font-awesome-icon icon="asterisk" />
-                        <span >Client</span>
+                        <span >Clients</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/category">
                         <font-awesome-icon icon="asterisk" />
-                        <span >Category</span>
+                        <span >Categories</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/goods">
                         <font-awesome-icon icon="asterisk" />
@@ -47,10 +47,6 @@
                     <b-dropdown-item to="/orders">
                         <font-awesome-icon icon="asterisk" />
                         <span >Orders</span>
-                    </b-dropdown-item>
-                    <b-dropdown-item to="/order-point">
-                        <font-awesome-icon icon="asterisk" />
-                        <span >OrderPoint</span>
                     </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>

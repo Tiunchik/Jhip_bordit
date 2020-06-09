@@ -115,4 +115,17 @@ public class OrderPointResource {
         orderPointRepository.deleteById(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * {@code GET  /order-points/orders/:id} : get the orderPoint thta contains order id.
+     *
+     * @param id the id of the order to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of orderPoints in body.
+     */
+    @GetMapping("/order-points/orders/{id}")
+    public List<OrderPoint> getOrderPointByOrders(@PathVariable Long id) {
+        log.debug("REST request to get OrderPoint by Order Id : {}", id);
+        return orderPointRepository.findAllByOrders_Id(id);
+
+    }
 }
