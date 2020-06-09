@@ -1,0 +1,38 @@
+{
+  "name": "Orders",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "orderPoint",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "orderpoint"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "client",
+      "otherEntityField": "lastName"
+    }
+  ],
+  "changelogDate": "20200609152627",
+  "entityTableName": "orders",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

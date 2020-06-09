@@ -50,6 +50,14 @@ public class CacheConfiguration {
             createCache(cm, ru.bordit.domain.User.class.getName() + ".authorities");
             createCache(cm, ru.bordit.domain.PersistentToken.class.getName());
             createCache(cm, ru.bordit.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, ru.bordit.domain.Client.class.getName());
+            createCache(cm, ru.bordit.domain.Category.class.getName());
+            createCache(cm, ru.bordit.domain.Category.class.getName() + ".goods");
+            createCache(cm, ru.bordit.domain.Goods.class.getName());
+            createCache(cm, ru.bordit.domain.Goods.class.getName() + ".categories");
+            createCache(cm, ru.bordit.domain.Orders.class.getName());
+            createCache(cm, ru.bordit.domain.Orders.class.getName() + ".orderpoints");
+            createCache(cm, ru.bordit.domain.OrderPoint.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

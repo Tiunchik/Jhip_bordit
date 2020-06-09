@@ -1,0 +1,43 @@
+entity Client {
+	firstName String required minlength(3),
+    patronim String required minlength(3),
+    lastName String required minlength(2),
+    age Integer min(0),
+    email String required minlength(6),
+    photo ImageBlob required
+}
+
+entity Category {
+	name String required
+}
+
+entity Goods {
+	name String required minlength(3),
+    price Double required,
+    image ImageBlob required
+}
+
+entity Orders {
+	date Instant required   
+}
+
+entity OrderPoint {
+	number Integer
+}
+
+relationship ManyToOne {
+    OrderPoint{goods(name)} to Goods
+}
+
+relationship ManyToOne {
+	Orders{client(lastName)} to Client
+}
+
+relationship ManyToMany {
+    Goods{category(name)} to Category{goods}
+}
+
+relationship OneToMany {
+	Orders{orderpoint} to OrderPoint
+}
+paginate Goods, Category, Orders with infinite-scroll

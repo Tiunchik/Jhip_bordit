@@ -1,0 +1,36 @@
+{
+  "name": "OrderPoint",
+  "fields": [
+    {
+      "fieldName": "number",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "goods",
+      "otherEntityRelationshipName": "orderPoint",
+      "relationshipName": "goods",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "orders",
+      "otherEntityRelationshipName": "orderpoint",
+      "relationshipName": "orders",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200609152727",
+  "entityTableName": "order_point",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

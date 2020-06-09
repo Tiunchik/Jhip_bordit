@@ -26,6 +26,36 @@ const JhiLogsComponent = () => import('../admin/logs/logs.vue');
 const JhiAuditsComponent = () => import('../admin/audits/audits.vue');
 const JhiMetricsComponent = () => import('../admin/metrics/metrics.vue');
 /* tslint:disable */
+// prettier-ignore
+const Client = () => import('../entities/client/client.vue');
+// prettier-ignore
+const ClientUpdate = () => import('../entities/client/client-update.vue');
+// prettier-ignore
+const ClientDetails = () => import('../entities/client/client-details.vue');
+// prettier-ignore
+const Category = () => import('../entities/category/category.vue');
+// prettier-ignore
+const CategoryUpdate = () => import('../entities/category/category-update.vue');
+// prettier-ignore
+const CategoryDetails = () => import('../entities/category/category-details.vue');
+// prettier-ignore
+const Goods = () => import('../entities/goods/goods.vue');
+// prettier-ignore
+const GoodsUpdate = () => import('../entities/goods/goods-update.vue');
+// prettier-ignore
+const GoodsDetails = () => import('../entities/goods/goods-details.vue');
+// prettier-ignore
+const Orders = () => import('../entities/orders/orders.vue');
+// prettier-ignore
+const OrdersUpdate = () => import('../entities/orders/orders-update.vue');
+// prettier-ignore
+const OrdersDetails = () => import('../entities/orders/orders-details.vue');
+// prettier-ignore
+const OrderPoint = () => import('../entities/order-point/order-point.vue');
+// prettier-ignore
+const OrderPointUpdate = () => import('../entities/order-point/order-point-update.vue');
+// prettier-ignore
+const OrderPointDetails = () => import('../entities/order-point/order-point-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -148,6 +178,131 @@ export default new Router({
       name: 'JhiConfigurationComponent',
       component: JhiConfigurationComponent,
       meta: { authorities: [Authority.ADMIN] }
+    }
+    ,
+    {
+      path: '/client',
+      name: 'Client',
+      component: Client,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/client/new',
+      name: 'ClientCreate',
+      component: ClientUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/client/:clientId/edit',
+      name: 'ClientEdit',
+      component: ClientUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/client/:clientId/view',
+      name: 'ClientView',
+      component: ClientDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/category',
+      name: 'Category',
+      component: Category,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/category/new',
+      name: 'CategoryCreate',
+      component: CategoryUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/category/:categoryId/edit',
+      name: 'CategoryEdit',
+      component: CategoryUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/category/:categoryId/view',
+      name: 'CategoryView',
+      component: CategoryDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/goods',
+      name: 'Goods',
+      component: Goods,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/goods/new',
+      name: 'GoodsCreate',
+      component: GoodsUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/goods/:goodsId/edit',
+      name: 'GoodsEdit',
+      component: GoodsUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/goods/:goodsId/view',
+      name: 'GoodsView',
+      component: GoodsDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/orders',
+      name: 'Orders',
+      component: Orders,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/orders/new',
+      name: 'OrdersCreate',
+      component: OrdersUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/orders/:ordersId/edit',
+      name: 'OrdersEdit',
+      component: OrdersUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/orders/:ordersId/view',
+      name: 'OrdersView',
+      component: OrdersDetails,
+      meta: { authorities: [Authority.USER] }
+    }
+    ,
+    {
+      path: '/order-point',
+      name: 'OrderPoint',
+      component: OrderPoint,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/order-point/new',
+      name: 'OrderPointCreate',
+      component: OrderPointUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/order-point/:orderPointId/edit',
+      name: 'OrderPointEdit',
+      component: OrderPointUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/order-point/:orderPointId/view',
+      name: 'OrderPointView',
+      component: OrderPointDetails,
+      meta: { authorities: [Authority.USER] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
   ]
