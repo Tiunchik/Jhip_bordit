@@ -23,10 +23,8 @@
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="order-point-orders">Orders</label>
-                        <select class="form-control" id="order-point-orders" name="orders" v-model="orderPoint.orders">
-                            <option v-bind:value="null"></option>
-                            <option v-bind:value="orderPoint.orders && ordersOption.id === orderPoint.orders.id ? orderPoint.orders : ordersOption" v-for="ordersOption in orders" :key="ordersOption.id">{{ordersOption.id}}</option>
-                        </select>
+                        <input type="number" class="form-control" name="number" id="order-point-orders"
+                               :class="{'valid': !$v.orderPoint.number.$invalid, 'invalid': $v.orderPoint.number.$invalid }" v-bind:value="orderPoint.orders.id" v-if="orderPoint.orders" readonly />
                     </div>
                 </div>
                 <div>

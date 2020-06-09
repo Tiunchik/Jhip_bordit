@@ -41,6 +41,9 @@ export default class OrderPointUpdate extends Vue {
       if (to.params.orderPointId) {
         vm.retrieveOrderPoint(to.params.orderPointId);
       }
+      if (to.params.ordersId) {
+        vm.loadOrders(to.params.ordersId);
+      }
       vm.initRelationships();
     });
   }
@@ -101,5 +104,11 @@ export default class OrderPointUpdate extends Vue {
       .then(res => {
         this.orders = res.data;
       });
+  }
+
+  public loadOrders(ordersId) {
+    this.ordersService()
+      .find(ordersId)
+      .then(ord => (this.orderPoint.orders = ord));
   }
 }

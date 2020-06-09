@@ -27,7 +27,7 @@
                 <router-link v-if="orders.id" :to="{name: 'OrdersEdit', params: {ordersId: orders.id}}" tag="button" class="btn btn-primary">
                     <font-awesome-icon icon="pencil-alt"></font-awesome-icon>&nbsp;<span> Edit</span>
                 </router-link>
-                <router-link :to="{name: 'OrderPointCreate'}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-order-point">
+                <router-link :to="{name: 'OrderPointCreateWith', params: {ordersId: orders.id}}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-order-point">
                     <font-awesome-icon icon="plus"></font-awesome-icon>
                     <span >
                     Create a new Order Point

@@ -293,6 +293,12 @@ export default new Router({
       meta: { authorities: [Authority.USER] }
     },
     {
+      path: '/order-point/:ordersId/new',
+      name: 'OrderPointCreateWith',
+      component: OrderPointUpdate,
+      meta: { authorities: [Authority.USER] }
+    },
+    {
       path: '/order-point/:orderPointId/edit',
       name: 'OrderPointEdit',
       component: OrderPointUpdate,
