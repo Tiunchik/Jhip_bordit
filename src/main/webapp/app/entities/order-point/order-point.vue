@@ -2,12 +2,6 @@
     <div>
         <h2 id="page-heading">
             <span id="order-point-heading">Order Points</span>
-            <router-link :to="{name: 'OrderPointCreate'}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-order-point">
-                <font-awesome-icon icon="plus"></font-awesome-icon>
-                <span >
-                    Create a new Order Point
-                </span>
-            </router-link>
         </h2>
         <b-alert :show="dismissCountDown"
             dismissible

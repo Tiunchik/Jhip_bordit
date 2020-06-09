@@ -1,6 +1,6 @@
 <template>
     <div id="footer" class="footer">
-        <p>This is your footer</p>
+        <p>First steps with Vue and JHipster</p>
     </div>
 </template>
 

@@ -51,7 +51,7 @@
                 <tr>
                     <th><span>Point ID</span></th>
                     <th><span>Item name</span></th>
-                    <th><span>quantity</span></th>
+                    <th><span>Quantity</span></th>
                     <th><span>Order number</span></th>
                     <th></th>
                 </tr>
